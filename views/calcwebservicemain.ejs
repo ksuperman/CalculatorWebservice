@@ -1,0 +1,117 @@
+<html>
+   <head>
+      <title>Calculator Webservice</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type='text/javascript' src="js/libjs.js"></script>
+      <script type='text/javascript'></script>
+   </head>
+   <body>
+   	  <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+       <div class="section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="jumbotron text-center">
+                     <h1>Calculator Webservice using Node.js</h1>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="jumbotron text-center">
+                     <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="Enter your Expression!" aria-describedby="sizing-addon1" id="expression" onfocus="ResetField(this)">
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="1" onclick="setDigit('1')">1</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="2" onclick="setDigit('2')">2</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="3" onclick="setDigit('3')">3</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-warning" id="+" onclick="setDigit('+')">+</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="4" onclick="setDigit('4')">4</a>
+                     </div>
+                     <div class="col-md-3 text-center" id="5">
+                        <a class="btn btn-lg btn-primary" id="5" onclick="setDigit('5')">5</a>
+                     </div>
+                     <div class="col-md-3 text-center" id="6">
+                        <a class="btn btn-lg btn-primary" id="6" onclick="setDigit('6')">6</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-warning" id="-" onclick="setDigit('-')">-</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="7" onclick="setDigit('7')">7</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="8" onclick="setDigit('8')">8</a>
+                     </div>
+                     <div class="col-md-3 text-center" id="9">
+                        <a class="btn btn-lg btn-primary" onclick="setDigit('9')">9</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-warning" id="/" onclick="setDigit('/')">/</a>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <br>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-primary" id="0" onclick="setDigit('0')">0</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-info btn-lg" id="." onclick="setDigit('.')">.</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-success" id="equals">=</a>
+                     </div>
+                     <div class="col-md-3 text-center">
+                        <a class="btn btn-lg btn-warning" id="*" onclick="setDigit('*')">*</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row text-center">
+                     <div class="col-md-12 text-center">
+                        <a class="btn btn-danger btn-lg" id="clear"  onclick="reset()">Clear/Reset</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-8">
+                  <p class="lead text-justify">The Front end application uses the services provided by the Node.js Server
+                     to Evalute the Expression entered and send the response back to the User.
+                     <br>
+                     <br>
+                     <b>How to use!</b>
+                     <br>1) Enter the expression or use the keypad to enter the expression in the
+                     Text Box.
+                     <br>2) Once you enter the expression then press the "=" to Evaluate the expression at the Node Server.
+                     <br>3)The Node Server responds back with the result of the expression or the error in the expression and the view is updated by the AJAX Post call.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

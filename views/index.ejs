@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <title><%= title %></title>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type='text/javascript' src="js/libjs.js"></script>
+      <script type='text/javascript'></script>
+   </head>
+   <body>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <div class="jumbotron">
+         <div class="container">
+            <h1>Calculator Webservice!</h1>
+         </div>
+      </div>
+      <div class="table" style="height:100px;overflow:hidden;margin-right:15px;width:600px;">
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>Operator 1</th>
+                  <th>Operation</th>
+                  <th>Operator 2</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><input type="text" name="Operator1" id="Operator1"></td>
+                  <td><input type="text" name="Operation" id="Operation"></td>
+                  <td><input type="text" name="Operator2" id="Operator2"></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      
+      <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+             <div class="alert alert-success" id="Result"></div>
+            </div>
+         </div>
+         
+<div class="bs-docs-grid">
+            <div class="row show-grid">
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+              <div class="span1" data-original-title="" title="">1</div>
+            </div>
+            <div class="row show-grid">
+              <div class="span2" data-original-title="" title="">2</div>
+              <div class="span3" data-original-title="" title="">3</div>
+              <div class="span4" data-original-title="" title="">4</div>
+            </div>
+            <div class="row show-grid">
+              <div class="span4" data-original-title="" title="">4</div>
+              <div class="span5" data-original-title="" title="">5</div>
+            </div>
+            <div class="row show-grid">
+              <div class="span9" data-original-title="" title="">9</div>
+            </div>
+          </div>
+         <div class="row">
+            <div class="col-md-6">
+               <button type="button" class="btn btn-default btn-lg" id="1" onclick="setDigit('1')">1</button>
+               <button type="button" class="btn btn-default btn-lg" id="2" onclick="setDigit('2')">2</button>
+               <button type="button" class="btn btn-default btn-lg" id="3" onclick="setDigit('3')">3</button>
+               <button type="button" class="btn btn-default btn-lg" id="+" onclick="setOperator('+')">+</button>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-6">
+               <button type="button" class="btn btn-default btn-lg" id="4" onclick="setDigit('4')">4</button>
+               <button type="button" class="btn btn-default btn-lg" id="5" onclick="setDigit('5')">5</button>
+               <button type="button" class="btn btn-default btn-lg" id="6" onclick="setDigit('6')">6</button>
+               <button type="button" class="btn btn-default btn-lg" id="7" onclick="setOperator('-')">-</button>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-6">
+               <button type="button" class="btn btn-default btn-lg" id="7" onclick="setDigit('7')">7</button>
+               <button type="button" class="btn btn-default btn-lg" id="8" onclick="setDigit('8')">8</button>
+               <button type="button" class="btn btn-default btn-lg" id="9" onclick="setDigit('9')">9</button>
+               <button type="button" class="btn btn-default btn-lg" id="/" onclick="setOperator('/')">/</button>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-6">
+               <button type="button" class="btn btn-default btn-lg" id="0" onclick="setDigit('0')">0</button>
+               <button type="button" class="btn btn-default btn-lg" id="." onclick="setDigit('.')"> . </button>
+               <button type="button" class="btn btn-default btn-lg" id="equals" >=</button>
+               <button type="button" class="btn btn-default btn-lg" id="*" onclick="setOperator('*')">*</button>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
