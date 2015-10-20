@@ -1,13 +1,8 @@
-
-/*
- * GET home page.
- */
-
 exports.index = function(req, res){
 	res.render('calcwebservicemain', { title: 'Calculator Webservice !' });
 };
 
-exports.test =  function(req, res){
+exports.evaluate =  function(req, res){
 	var jsonString;
 	if(req.method == 'POST'){
 		var obj = JSON.parse(JSON.stringify(req.body));
@@ -23,7 +18,7 @@ exports.test =  function(req, res){
 			console.log(expression);
 
 			if(expression.match(regexp))
-				throw "Invalid Expression : Alphanumeric";
+				throw "Invalid Expression : Alphanumeric Input is not Supported";
 			else{
 				expression = expression.split("");
 				console.log(expression);
@@ -32,7 +27,7 @@ exports.test =  function(req, res){
 					switch(expression[i]){
 					case "+":
 					case "-":
-					case "*":
+					case "*":	
 					case "/":
 						if(tempOperand.length > 0){
 							operandNumber[oprandsIndex] = parseFloat(tempOperand);
@@ -51,17 +46,24 @@ exports.test =  function(req, res){
 						}
 						break;
 
+					case " ":
+						break;
+
 					default :
-						tempOperand += expression[i];
-						if(tempOperand.length > 0 && i==(expression.length-1)){
-							operandNumber[oprandsIndex] = parseFloat(tempOperand);
-							tempOperand = "";
-							if(operandNumber[oprandsIndex] == "NaN"){
-								Result = "Invalid Expression : Operand is not Number";
-							}
-							else
-								console.log("\n operand Added : " + operandNumber[oprandsIndex]);
+						if(isNaN(parseFloat(expression[i])) && expression[i] != '.'){
+							throw "Invalid Expression : Operator is not Supported!";
 						}
+					tempOperand += expression[i];
+					console.log(parseFloat(tempOperand));
+					if(tempOperand.length > 0 && i==(expression.length-1)){
+						operandNumber[oprandsIndex] = parseFloat(tempOperand);
+						tempOperand = "";
+						if(isNaN(operandNumber[oprandsIndex])){
+							throw "Invalid Expression : Operand is not Number";
+						}
+						else
+							console.log("\n operand Added : " + operandNumber[oprandsIndex]);
+					}
 					}
 				}
 
@@ -72,7 +74,9 @@ exports.test =  function(req, res){
 					throw "Invalid Expression : Operator Operand Mismatch";	
 				}else{
 					for(var i=0;i<operators.length;i++){
+
 						switch(operators[i]){
+
 						case "+":
 							operandNumber[i+1] = parseFloat(parseFloat(operandNumber[i]) + parseFloat(operandNumber[i+1]));
 							break;
@@ -101,5 +105,7 @@ exports.test =  function(req, res){
 			Result = err;
 		}
 	}
+	if(Result == "Infinity")
+		Result = "Divide by '0' is Invalid Operation";
 	res.status(200).send(Result);
 }

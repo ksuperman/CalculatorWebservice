@@ -4,7 +4,7 @@ $(function(){
 		data.expression = $( "#expression" ).val();
 		console.log(JSON.stringify(data));
 		$.ajax({
-			url:'/test',type: 'POST',contentType: 'application/json',data: JSON.stringify(data),
+			url:'/evaluate',type: 'POST',contentType: 'application/json',data: JSON.stringify(data),
 			success: function(result){
 				console.log(parseFloat(result));
 				if(parseFloat(result).toString() == "NaN")
@@ -22,9 +22,9 @@ $(function(){
 });
 
 function setDigit(digit){
-		var temp = document.getElementById("expression").value;
-		temp = temp + digit;
-		document.getElementById("expression").value = temp;
+	var temp = document.getElementById("expression").value;
+	temp = temp + digit;
+	document.getElementById("expression").value = temp;
 }
 
 function reset(){
